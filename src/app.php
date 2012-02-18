@@ -10,3 +10,5 @@
 */
 
 require_once __DIR__ . '/../vendor/simplex/autoload.php';
+
+$app = new Simplex\Application();
