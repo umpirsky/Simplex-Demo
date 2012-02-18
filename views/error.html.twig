@@ -1,4 +1,4 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}{% if 404 == code %}Page Not Found{% else %}Internal server error{% endif %}{% endblock %}
-{% block content %}<h1 class="error">{% if 404 == code %}404{% else %}Error{% endif %}</h1>{% endblock %}
+{% block title %}{% if 404 == code %}Page could not be found{% else %}Internal server error{% endif %}{% endblock %}
+{% block content %}<h1 class="error">{% if 404 == code %}The requested page could not be found.{% else %}We are sorry, but something went terribly wrong.{% endif %}</h1>{% endblock %}

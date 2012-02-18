@@ -11,9 +11,10 @@
 
 require_once __DIR__ . '/../vendor/simplex/autoload.php';
 
-$app = new Simplex\Application(array(
-    'twig.path' => __DIR__ . '/../views'
-));
+$config = \Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/app.yml');
+$config['twig.path'] = __DIR__ . '/../' . $config['twig.path']; // TODO: add application path as parameter in Simplex\Application
+
+$app = new Simplex\Application($config);
 
 // Add pages
 foreach (array(
