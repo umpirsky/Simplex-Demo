@@ -1,2 +1,2 @@
-Simple Website Made With Simplex
+Simple Website made with Simplex
 ================================
