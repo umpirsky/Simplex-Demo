@@ -11,8 +11,18 @@
 
 require_once __DIR__ . '/../vendor/simplex/autoload.php';
 
-$app = new Simplex\Application();
-$app->get('/', function() use($app) { 
-    return 'Hello Simplex'; 
-}); 
+$app = new Simplex\Application(array(
+    'twig.path' => __DIR__ . '/../views'
+));
+
+// Add pages
+foreach (array(
+    'home' => '/',
+    'test' => '/test'
+) as $route => $url) {
+    $app->get($url, function () use ($app, $route) {
+        return $app['twig']->render($route . '.html.twig');
+    })->bind($route);
+}
+
 return $app;
