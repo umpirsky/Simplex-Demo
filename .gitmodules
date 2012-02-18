@@ -1,0 +1,3 @@
+[submodule "vendor/Simplex"]
+	path = vendor/Simplex
+	url = git@github.com:umpirsky/Simplex.git
