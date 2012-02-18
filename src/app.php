@@ -18,7 +18,7 @@ $app = new Simplex\Application(array(
 // Add pages
 foreach (array(
     'home' => '/',
-    'test' => '/test'
+    'about' => '/about'
 ) as $route => $url) {
     $app->get($url, function () use ($app, $route) {
         return $app['twig']->render($route . '.html.twig');
