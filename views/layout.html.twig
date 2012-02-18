@@ -28,10 +28,7 @@
                     </a>
                     <a class="brand" href="{{ app.url_generator.generate('home') }}">Simlpex</a>
                     <div class="nav-collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="{{ app.url_generator.generate('home') }}">Home</a></li>
-                            <li><a href="{{ app.url_generator.generate('about') }}">About</a></li>
-                        </ul>
+                        {{ knp_menu_render('main') }}
                     </div>
                 </div>
             </div>

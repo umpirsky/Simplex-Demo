@@ -16,12 +16,23 @@ $config['twig.path'] = __DIR__ . '/../' . $config['twig.path']; // TODO: add app
 
 $app = new Simplex\Application($config);
 
+$app->register(new \Knp\Menu\Silex\KnpMenuServiceProvider());
+$app['knp_menu.menus'] = array('main' => 'menu_main');
+$app['menu_main'] = function($app) {
+
+    $menu = $app['knp_menu.factory']->createItem('root', array('attributes' => array('class' => 'nav')));
+    
+    foreach (\Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/menu.yml') as $key => $item) {
+        $menu->addChild($key, $item);
+    }
+    
+    return $menu->setCurrentUri($app['request']->getRequestUri());
+};
+
 // Add pages
-foreach (array(
-    'home' => '/',
-    'about' => '/about'
-) as $route => $url) {
-    $app->get($url, function () use ($app, $route) {
+foreach (\Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/menu.yml') as $item) {
+    $route = $item['route'];
+    $app->get($item['uri'], function () use ($app, $route) {
         return $app['twig']->render($route . '.html.twig');
     })->bind($route);
 }
