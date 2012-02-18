@@ -12,3 +12,7 @@
 require_once __DIR__ . '/../vendor/simplex/autoload.php';
 
 $app = new Simplex\Application();
+$app->get('/', function() use($app) { 
+    return 'Hello Simplex'; 
+}); 
+return $app;
