@@ -1,0 +1,10 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.navbar .nav .current > a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #222222;
+}
