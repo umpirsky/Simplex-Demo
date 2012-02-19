@@ -15,23 +15,8 @@ $config = \Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/app.yml');
 $config['twig.path'] = __DIR__ . '/../' . $config['twig.path']; // TODO: add application path as parameter in Simplex\Application
 
 $app = new Simplex\Application($config);
-
-$app->register(new \Knp\Menu\Silex\KnpMenuServiceProvider());
-$app['knp_menu.menus'] = array('main' => 'menu_main');
-$app['menu_main'] = function($app) {
-
-    $menu = \Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/menu.yml');
-    return $app['knp_menu.factory']->createFromArray($menu['main'])->setCurrentUri($app['request']->getRequestUri());
-};
-
-// Add pages
-foreach (\Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/menu.yml') as $menu) {
-    foreach ($menu['children'] as $item) {
-        $route = $item['route'];
-        $app->get($item['uri'], function () use ($app, $route) {
-            return $app['twig']->render($route . '.html.twig');
-        })->bind($route);
-    }
-}
+$navigation = \Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/navigation.yml');
+$app->addNavigation($navigation);
+$app->addPages($navigation);
 
 return $app;
