@@ -1,8 +1,13 @@
-home: 
-  label:  Home
-  route:  home
-  uri:    /
-about: 
-  label:  About
-  route:  about
-  uri:    /about
+main:
+  name: main
+  attributes:
+    class: nav
+  children:
+    home: 
+      label:  Home
+      route:  home
+      uri:    /
+    about: 
+      label:  About
+      route:  about
+      uri:    /about
