@@ -42,11 +42,11 @@ foreach ($navigation as $menu) {
     $pages = array_merge($pages, $items2pages($menu['children']));
 }
 $app->register(new \Simplex\Provider\PageServiceProvider(), array(
-    'pages' => $pages
+    'page.pages' => $pages
 ));
 
 $app->register(new \Simplex\Provider\NavigationServiceProvider(), array(
-    'navigation' => $navigation
+    'navigation.menus' => $navigation
 ));
 
  // Register error handler
