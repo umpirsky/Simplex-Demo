@@ -1,13 +1,25 @@
+# Velid options:
+#   name                - the name of this menu item
+#   label               - the label to output, name is used by default
+#   route               - the route to use, you can use it in view files for linking pages <a href="{{ app.url_generator.generate('route_name') }}">Click me</a>
+#   uri                 - the uri to use in the anchor tag
+#   attributes          - an array html of attributes for the li
+#   linkAttributes      - an array html of attributes for the item link
+#   childrenAttributes  - an array html of attributes for the children list
+#   labelAttributes     - an array html of attributes for the item text
+#   display             - boolean to render this menu
+#   displayChildren     - boolean to render the children of this menu
+
 main:
   name: main
   attributes:
     class: nav
   children:
     home:
-      label:  Home
+      name:   Home
       route:  home
       uri:    /
     about:
-      label:  About
+      name:   About
       route:  about
       uri:    /about
