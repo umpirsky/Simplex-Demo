@@ -20,20 +20,8 @@ main:
       name:   Home
       route:  home
       uri:    /
-#    products:
-#      name:   Products
-#      route:  products
-#      uri:    /products
-#      children:
-#        product1:
-#          name:   Product1
-#          route:  product1
-#          uri:    /product1
-#        product2:
-#          name:   Product2
-#          route:  product2
-#          uri:    /product2
     about:
       name:   About
       route:  about
       uri:    /about
+
