@@ -3,11 +3,11 @@ main:
   attributes:
     class: nav
   children:
-    home: 
+    home:
       label:  Home
       route:  home
       uri:    /
-    about: 
+    about:
       label:  About
       route:  about
       uri:    /about

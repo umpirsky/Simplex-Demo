@@ -1,4 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}{% if 404 == code %}Page could not be found{% else %}Internal server error{% endif %}{% endblock %}
-{% block content %}<h1 class="error">{% if 404 == code %}The requested page could not be found.{% else %}We are sorry, but something went terribly wrong.{% endif %}</h1>{% endblock %}
+{% block content %}
+    {% if 404 == code %}
+        <h2 class="alert">The requested page could not be found.</h2>
+        {% if app.debug %}
+            <p class="alert alert-info">If you want to add this page, just place new entry to <code>config/navigation.yml</code> file.</p>
+        {% endif %}
+    {% else %}
+        <h2 class="alert alert-error">We are sorry, but something went terribly wrong.</h2>
+        {% if app.debug %}
+            <p class="alert alert-error">{{ exception.getMessage() }}</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}
