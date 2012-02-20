@@ -22,8 +22,19 @@ $app->register(new \Silex\Provider\TwigServiceProvider(), array(
 $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 
 $navigation = \Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/navigation.yml');
+
+$pages = array();
+foreach ($navigation as $menu) {
+    foreach ($menu['children'] as $item) {
+        $pages[] = array(
+            'route' => $item['route'],
+            'uri' => $item['uri'],
+            'view' => isset($item['view']) ? $item['view'] : $item['route']
+        );
+    }
+}
 $app->register(new \Simplex\Provider\PageServiceProvider(), array(
-    'navigation' => $navigation
+    'pages' => $pages
 ));
 
 $app->register(new \Simplex\Provider\NavigationServiceProvider(), array(

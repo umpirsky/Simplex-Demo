@@ -2,6 +2,7 @@
 #   name                - the name of this menu item
 #   label               - the label to output, name is used by default
 #   route               - the route to use, you can use it in view files for linking pages <a href="{{ app.url_generator.generate('route_name') }}">Click me</a>
+#   view               - the view file to use, if not set, used route instead
 #   uri                 - the uri to use in the anchor tag
 #   attributes          - an array html of attributes for the li
 #   linkAttributes      - an array html of attributes for the item link
@@ -19,6 +20,19 @@ main:
       name:   Home
       route:  home
       uri:    /
+#    products:
+#      name:   Products
+#      route:  products
+#      uri:    /products
+#      children:
+#        product1:
+#          name:   Product1
+#          route:  product1
+#          uri:    /product1
+#        product2:
+#          name:   Product2
+#          route:  product2
+#          uri:    /product2
     about:
       name:   About
       route:  about
