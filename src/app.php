@@ -21,32 +21,13 @@ $app->register(new \Silex\Provider\TwigServiceProvider(), array(
 
 $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 
-$items2pages = function($items) use (&$items2pages) {
-    $pages = array();
-    foreach ($items as $item) {
-        $pages[] = array(
-            'route' => $item['route'],
-            'uri' => $item['uri'],
-            'view' => isset($item['view']) ? $item['view'] : $item['route']
-        );
-        if (isset($item['children'])) {
-            $pages = array_merge($pages, $items2pages($item['children']));
-        }
-    }
-    return $pages;
-};
-
-$pages = array();
 $navigation = \Symfony\Component\Yaml\Yaml::parse(__DIR__ . '/../config/navigation.yml');
-foreach ($navigation as $menu) {
-    $pages = array_merge($pages, $items2pages($menu['children']));
-}
-$app->register(new \Simplex\Provider\PageServiceProvider(), array(
-    'page.pages' => $pages
-));
-
 $app->register(new \Simplex\Provider\NavigationServiceProvider(), array(
     'navigation.menus' => $navigation
+));
+
+$app->register(new \Simplex\Provider\PageServiceProvider(), array(
+    'page.pages' => $app['navigation.converter']->convert($navigation)
 ));
 
  // Register error handler
