@@ -2,6 +2,41 @@
 
 {% block content %}
 <h1>Introduction</h1>
+<p>The main idea behind Simplex is to make website building process as simple as possible.</p>
 <h2>Quick Start</h2>
+<p>
+    To install this demo, follow this steps:
+    <ul>
+        <li><a href="{{ app.url_generator.generate('download') }}">Download</a> demo application.</li>
+        <li>Setup as any other PHP website, web root directory is <code>/web</code> (it can be renamed if needed).</li>
+    </ul>
+    As a final result, you should get our <a href="{{ app.url_generator.generate('home') }}">home</a> page.
+</p>
 <h2>Adding Pages</h2>
+<p>Adding new pages is very simple and intuitive.</p>
+<p>You can start by typing <code>/simplex</code> in your browsers location toolbar. It says that page could not be found and gives you a hint:</p>
+<p class="alert alert-info">If you want to add this page, just place new entry to <code>/config/navigation.yml</code> file.</p>
+<p>Now if you open <code>/config/navigation.yml</code> file, you will see that entire main menu is configured here. If you are not familiar with yaml format you can read about it on <a href="http://en.wikipedia.org/wiki/YAML">Wikipedia</a>.</p>
+<p>Lets add:</p>
+<pre>
+    simplex:
+      name:     Simplex
+      route:    simplex
+      uri:      /simplex
+</pre>
+<p>Refresh <code>/simplex</code> page again. Now it says that something went wrong and gives error message:</p>
+<p class="alert alert-error">Template "simplex.html.twig" is not defined.</p>
+<p>Let's add it. Create new <code>/views/simplex.html.twig</code> file:</p>
+<pre>
+    {% spaceless %}
+    {% raw %}
+    {% extends 'layout.html.twig' %}
+    {% block content %}
+        &lt;h1&gt;Hello Silex&lt;/h1&gt;
+    {% endblock %}
+    {% endraw %}
+    {% endspaceless %}
+</pre>
+<p>Save it, refresh <code>/simplex</code> page and that's it.</p>
+
 {% endblock %}
