@@ -1,5 +1,18 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="/css/prettify.css" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+        $(document).ready(prettyPrint);
+    </script>
+{% endblock %}
+
 {% block content %}
 <h1>Documenatation</h1>
 <p>The main idea behind Simplex is to make website building process as simple as possible.</p>

@@ -7,13 +7,14 @@
         <meta name="keywords" content="{% block keywords %}Simplex{% endblock %}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Саша Стаменковић <umpirsky@gmail.com>">
+        {% block stylesheets %}
         <link href="/css/bootstrap.css" rel="stylesheet">
         <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="/css/prettify.css" rel="stylesheet">
         <link href="/css/style.css" rel="stylesheet">
+        {% endblock %}
         <link rel="shortcut icon" href="/images/favicon.ico">
     </head>
-    <body onload="prettyPrint()">
+    <body>
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
@@ -37,8 +38,9 @@
                 <p>Powered by <a href="https://github.com/umpirsky/Simplex">Simplex</a>.</p>
             </footer>
         </div>
+        {% block javascripts %}
         <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+        {% endblock %}
     </body>
 </html>
