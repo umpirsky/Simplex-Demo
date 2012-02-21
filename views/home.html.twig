@@ -3,24 +3,24 @@
 {% block content %}
     <div class="hero-unit">
         <h1>Simplex</h1>
-        <p>This is a demo application built with Simplex, simple PHP microframework built on top of Silex and Symfony2. </p>
-        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        <p>This is a demo application powered by Simplex, simple PHP microframework built on the shoulders of Silex and Symfony2. </p>
+        <p><a href="{{ app.url_generator.generate('documentation') }}" class="btn btn-primary btn-large"><i class="icon-book icon-white"></i> Learn more &raquo;</a></p>
     </div>
     <div class="row">
         <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+            <h2>Quick Start</h2>
+            <p>The goal of this demo is to get you started quickly. Buld websites easier, better, and faster. Simplex is built for developers, designers and business owners. No development skills are required. Just get the source and start adding pages.</p>
+            <p><a class="btn" href="{{ app.url_generator.generate('documentation') }}"><i class="icon-book"></i> Learn more &raquo;</a></p>
         </div>
         <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+            <h2>Development</h2>
+            <p>Simplex was orignally created by <a href="http://umpirsky.com/">Saša Stamenković</a>. All contributions, ideas and suggestions are welcome. The official Git repository is at <a href="https://github.com/umpirsky/Simplex-Website">github.com</a>. If you find a bug, you can <a href="https://github.com/umpirsky/Simplex-Website/issues/new">create a ticket</a>.</p>
+            <p><a class="btn" href="https://github.com/umpirsky/Simplex-Website"><i class="icon-user"></i> Get involved &raquo;</a></p>
         </div>
         <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+            <h2>Download</h2>
+            <p>There are two ways to get demo application. Clone repository from <a href="https://github.com/umpirsky/Simplex-Website">github.com</a>, just make sure to pull all submodules too. If you are not into git, just get the <a href="#">tarball</a>. Please find installation instructions on <a href="{{ app.url_generator.generate('documentation') }}">documantation</a> page.</p>
+            <p><a class="btn" href="{{ app.url_generator.generate('download') }}"><i class="icon-download-alt"></i> Download now</a></p>
         </div>
     </div>
 {% endblock %}

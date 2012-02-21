@@ -17,11 +17,24 @@ main:
     class: nav
   children:
     home:
-      name:   Home
-      route:  home
-      uri:    /
+      name:     Home
+      route:    home
+      uri:      /
+      display: false
     about:
-      name:   About
-      route:  about
-      uri:    /about
+      name:     About
+      route:    about
+      uri:      /about
+    documentation:
+      name:     Documentation
+      route:    documentation
+      uri:      /documentation
+    development:
+      name:     Development
+      route:    development
+      uri:      /development
+    download:
+      name:     Download
+      route:    download
+      uri:      /download
 
