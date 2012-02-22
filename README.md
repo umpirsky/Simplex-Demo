@@ -6,4 +6,4 @@ This is a demo application built with Simplex, simple PHP microframework built o
 Installation
 ------------
 
-*  `git clone --recursive git@github.com:umpirsky/Simplex-Website.git`
+*  `git clone --recursive git@github.com:umpirsky/Simplex-Demo.git`

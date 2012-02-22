@@ -1,7 +1,7 @@
 <?php
 
 /*
-* This file is part of the Simplex-Website.
+* This file is part of the Simplex-Demo.
 *
 * (c) Саша Стаменковић <umpirsky@gmail.com>
 *
