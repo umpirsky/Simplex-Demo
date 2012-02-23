@@ -25,7 +25,7 @@
     </ul>
     As a final result, you should get our <a href="{{ app.url_generator.generate('home') }}">home</a> page.
 </p>
-<h2>Adding Pages</h2>
+<h2>Add a New Page</h2>
 <p>Adding new pages is very simple and intuitive.</p>
 <p>You can start by typing <code>/simplex</code> in your browsers location toolbar. It says that page could not be found and gives you a hint:</p>
 <p class="alert alert-info">If you want to add this page, just place new entry to <code>/config/navigation.yml</code> file.</p>
@@ -53,4 +53,29 @@ simplex:
 </pre>
 <p><i class="icon-info-sign"></i> Simplex uses Twig as a template engine. You can read more about Twig <a target="_blank" href="http://twig.sensiolabs.org/">here</a>.</p>
 <p>Save it, refresh <code>/simplex</code> page and that's it.</p>
+<h2>Customize Layout</h2>
+<p>Current layout is based on <a target="_blank" href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter</a>.</p>
+<p>You are free to change view files as well as styles, scripts and images.</p>
+<h2>Page Specific Styles and Scripts</h2>
+<p>There are two blocks defined in <code>/views/layout.html.twig</code>, stylesheets and javascripts.</p>
+<p>You can override them in page specific templates like this:</p>
+<pre class="prettyprint">
+{% spaceless %}
+{% raw %}
+{% block stylesheets %}
+    {{ parent() }}
+    &lt;link href=&quot;/css/prettify.css&quot; rel=&quot;stylesheet&quot;&gt;
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/js/google-code-prettify/prettify.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        $(document).ready(prettyPrint);
+    &lt;/script&gt;
+{% endblock %}
+{% endraw %}
+{% endspaceless %}
+</pre>
+<p><i class="icon-info-sign"></i> You can read more about template inheritance <a target="_blank" href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">here</a>.</p>
 {% endblock %}
