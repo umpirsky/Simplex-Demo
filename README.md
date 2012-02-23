@@ -1,7 +1,7 @@
 Simplex Powered Application
 ===========================
 
-This is a demo application built with Simplex, simple PHP microframework built on the shoulders of Silex and Symfony2.
+This is a demo application built with Simplex, simple PHP micro-framework built on the shoulders of Silex and Symfony2.
 
 Installation
 ------------
