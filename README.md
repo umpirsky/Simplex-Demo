@@ -1,9 +1,9 @@
 Simplex Powered Application
 ===========================
 
-This is a demo application built with Simplex, simple PHP micro-framework built on the shoulders of Silex and Symfony2.
+This is a demo application built with Simplex, simple PHP micro-framework built on the shoulders of Symfony2 and Silex.
 
-Installation
-------------
+Idea
+----
 
-*  `git clone --recursive git@github.com:umpirsky/Simplex-Demo.git`
+The main idea is to simplify creation of small websites. Please find more information on [Simplex live demo] (http://simplex.umpirsky.com/).
